@@ -26,8 +26,8 @@
         </div>
     @endif
 
-
-    <form action="{{ route('users.update', $user->id) }}" method="PATCH">
+    <form action="{{ route('users.update', $user->id) }}" method="POST">
+        @method('PATCH')
         @csrf
         <div class="row">
             <div class="col-xs-12 mb-3">

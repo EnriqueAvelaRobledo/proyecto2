@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb mb-4">
         <div class="pull-left">
-            <h2>Users Management                
+            <h2>Users Management
         <div class="float-end">
             <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
         </div>
@@ -44,9 +44,12 @@
     <td>
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-        <a class="btn btn-success" href="{{ route('users.destroy',$user->id) }}"> Delete</a>
-    </td>
+       <form action="{{ route('users.destroy',$user->id) }}" method="POST" style="display: inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+    </form>    </td>
   </tr>
  @endforeach
 </table>
-@endsection 
+@endsection

@@ -27,8 +27,6 @@ class DatabaseSeeder extends Seeder
         'product-edit',
         'product-delete'
     ];
-
-
     /**
      * Seed the application's database.
      */
@@ -65,14 +63,14 @@ class DatabaseSeeder extends Seeder
 
         // Create regular user and assign the user role with specific permissions
         $regularUser = User::create([
-            'name' => 'Regular User Rol',
+            'name' => 'Rol User',
             'email' => 'userRol@example.com',
             'password' => Hash::make('password')
         ]);
         $regularUser->assignRole($userRole);
 
         $regularUser = User::create([
-            'name' => 'Regular User Product',
+            'name' => 'Product User',
             'email' => 'userProduct@example.com',
             'password' => Hash::make('password')
         ]);
